@@ -1,37 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lab5-3</title>
-</head>
-<body>
+    <style>
+      form {
+        width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+      #FNAME,#LNAME,#Password,#CPassword{
+        width: 285px;
+      }
+
+      #Email{
+        width: 585px;
+      }
+      textarea{
+        width: 585px;
+      }
+      tfoot{
+        text-align: end;
+        height: 50px;
+        margin-right: 50px;
+      }
+    </style>
+  </head>
+  <body>
     <form>
-        <table>
-            <caption>Create Account</caption>
-            <tr>
-                <td>First name*</td>
-                <td>Last name</td>
-            </tr>
-            <tr>
-                <td><input type="text" required placeholder="Enter your first name"></td>
-                <td><input type="text" placeholder="Enter your last name"></td>
-            </tr>
-            <tr>
-                <td colspan="2">Email*</td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="email" required placeholder="enter Your Email"></td>
-            </tr>
-            <tr>
-                <td>Password*</td>
-                <td>Confirm Password*</td>
-            </tr>
-            <tr>
-                <td><input type="password" required placeholder="Enter your password"></td>
-                <td><input type="password" placeholder="Enter your password again"></td>
-            </tr>
-        </table>
+      <table style="border: 1px solid black;" cellspacing="10">
+        <caption>
+          <h1>Create Account</h1>
+        </caption>
+        <tr>
+          <td>
+            First name*<br /><input
+              type="text"
+              required
+              placeholder="Enter your first name"
+              name="FNAME"
+              id="FNAME"
+            />
+          </td>
+          <td>
+            Last name<br /><input
+              type="text"
+              placeholder="Enter your last name"
+              name="LNAME"
+              id="LNAME"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Email*<br /><input
+              type="email"
+              required
+              placeholder="enter Your Email"
+              name="Email"
+              id="Email"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Password*<br /><input
+              type="password"
+              required
+              placeholder="Enter your password"
+              name="Password"
+              id="Password"
+            />
+          </td>
+          <td>
+            Confirm Password*<br /><input
+              type="password"
+              placeholder="Enter your password again"
+              id="CPassword"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Gender:<br /><input type="radio" name="Gender" value="Male" />Male
+            <input type="radio" value="Female" name="Gender" />Female
+          </td>
+          <td>
+            Hobbies:<br /><input
+              type="checkbox"
+              name="Hobbies"
+              value="Music"
+            />Music
+            <input type="checkbox" name="Hobbies" value="Sports" />Sports
+            <input type="checkbox" name="Hobbies" value="Travel" />Travel
+            <input type="checkbox" name="Hobbies" value="Movies" />Movies
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Source of Income<br /><select name="incomeSource" id="incomeSource">
+              <option value="Employed">Employed</option>
+              <option value="Self Employed">Self Employed</option>
+              <option value="Student">Student</option>
+              <option value="Unemployed">Unemployed</option>
+            </select>
+          </td>
+          <td>
+            Income<br /><input
+              type="range"
+              id="income"
+              min="0"
+              max="100"
+              value="20"
+              name="Income"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Upload Profile Picture <br />
+            <input type="file" name="Picture" id="Picture" />
+          </td>
+          <td>
+            Age <br /><input
+              type="number"
+              id="Age"
+              name="Age"
+              min="1"
+              max="100"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Bio<br />
+            <textarea name="Bio" id="Bio" rows="4" cols="50"></textarea>
+          </td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td colspan="2"><input type="submit" value="Create" /></td>
+          </tr>
+        </tfoot>
+      </table>
     </form>
-</body>
+  </body>
 </html>

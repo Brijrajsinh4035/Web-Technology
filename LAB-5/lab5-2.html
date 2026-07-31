@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>lab5-2</title>
 </head>
 <body>
     <form method="get" >
-        <table align="Center">
+        <table align="Center" cellspacing="20">
             <caption style="font-size: 25PX;">COVID-19 Vaccine Registration Form</caption>
             <tr>
                 <td>First Name</td>
-                <td><input type="text" id="fname"></td>
+                <td><input type="text" id="fname" name="fname"></td>
             </tr>
             <tr>
                 <td>Last Name</td>
-                <td><input type="text" id="lname"></td>
+                <td><input type="text" id="lname" name="lname"></td>
             </tr>
             <tr>
                 <td>Aadhar Number</td>
-                <td><input type="number" maxlength="12"></td>
+                <td><input type="number" maxlength="12" name="AadharNo"></td>
             </tr>
             <tr>
                 <td>Vaccine Name</td>
@@ -42,19 +42,19 @@
             <tr>
                 <td>Date of Dose</td>
                 <td>
-                    <input type="date">
+                    <input type="date" id="DOD" name="DOD">
                 </td>
             </tr>
             <tr>
                 <td>Dose Number</td>
                 <td>
-                    <input type="number" max="3" min="1">
+                    <input type="number" max="3" min="1" name="DoseNumber" id="DoseNumber">
                 </td>
             </tr>
             <tr align="Center">
                 <td colspan="2">
-                    <input type="submit" placeholder="CLICK HERE"></input>
-                    <INPUT type="reset" title="CANCEL"></INPUT>
+                    <input type="submit" value="CLICK HERE"></input>
+                    <INPUT type="reset" value="CANCEL"></INPUT>
                 </td>
             </tr>
         </table>

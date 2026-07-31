@@ -1,59 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lab5-1</title>
-</head>
-<body>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      form {
+        width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+      label {
+        display: inline-block;
+        width: 180px;
+        margin-bottom: 10px;
+      }
+      input,
+      textarea,
+      select {
+        margin-bottom: 10px;
+      }
+      .button{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
     <form>
-        <h1 valine="center">Stdent Registation</h1>
-        <label for="fullname" >FullName</label>
-        <input type="text" name="fullname" id="fullname"><br>
-        <label for="email" >Email</label>
-        <input type="email" name="email" id="email"><br>
-        <label for="MobileNo" >Mobile No</label>
-        <input type="mobile" name="Mobile" id="MobileNo"><br> 
-        <label>Address</label>
-        <textarea cols="30" rows="7"></textarea><br>
-        <label for="nationality">Nationality</label>
-        <input type="text" name="Nationality" id="nationality"><br>
-        <label for="dob">Date Of Birth</label>
-        <input type="date" name="dob" id="dob"><br>
-<!--         
-        <label for="Gender">Gender</label>
-        <input type="radio" id="Gender">
-        <label for="male">Male</label>
-        <input type="radio" id="Gender">
-        <label for="">Female</label><br> -->
+      <h1>Stdent Registation</h1>
+      <label for="fullname">FullName</label>
+      <input type="text" name="fullname" id="fullname" /><br />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" /><br />
+      <label for="MobileNo">Mobile No</label>
+      <input type="mobile" name="Mobile" id="MobileNo" /><br />
+      <label valine="center">Address</label>
+      <textarea cols="30" rows="7"></textarea><br />
+      <label for="nationality">Nationality</label>
+      <input type="text" name="Nationality" id="nationality" /><br />
+      <label for="dob">Date Of Birth</label>
+      <input type="date" name="dob" id="dob" /><br />
 
-        <label for="Gender">Gender</label>
-        <input type="radio" id="Gender" name="Gender">Male
-        <input type="radio" id="Gender" name="Gender">Female
-        <br>
-        <!-- <label for="female"></label>
-        <input type="radio" id="male">Male
-        <input type="radio" id="female">Female -->
+      <label for="Gender">Gender</label>
+      <input type="radio" id="Gender" name="Gender" />Male
+      <input type="radio" id="Gender" name="Gender" />Female
+      <br />
 
-        
-        <label for="Degree"> Highest Degree</label>
-        <select name="Degree" id="HDegree">
-            <option value="">Select Degree</option>
-            <option value="mca">MCA</option>
-            <option value="bca">BCA</option>
-        </select><BR>
-        <label for="CPI">CPI</label>    
-        <input type="text" id="Cpi" name="CPI"><BR>
-        <label for="university">University</label>    
-        <input type="text" id="university" name="university"><BR>
-        <label for="year">Passing Year</label>
-        <select name="Year" id="year">
-            <option value="">select Your passing year</option>
-            <option value="2026">2026</option>
-            <option value="2025">2025</option>
-        </select><br>
-        <input type="submit" id="submit">
-        <input type="reset" id="reset">                
+      <label for="Degree"> Highest Degree</label>
+      <select name="Degree" id="HDegree">
+        <option value="">Select Degree</option>
+        <option value="mca">MCA</option>
+        <option value="bca">BCA</option></select
+      ><br />
+      <label for="CPI">CPI</label>
+      <input type="text" id="Cpi" name="CPI" /><br />
+      <label for="university">University</label>
+      <input type="text" id="university" name="university" /><br />
+      <label for="year">Passing Year</label>
+      <select name="Year" id="year">
+        <option value="">select Your passing year</option>
+        <option value="2026">2026</option>
+        <option value="2025">2025</option></select
+      ><br />
+      <div class="button">
+        <input type="submit" id="submit" />
+        <input type="reset" id="reset" value="cancel" />
+      </div>
     </form>
-</body>
+  </body>
 </html>
