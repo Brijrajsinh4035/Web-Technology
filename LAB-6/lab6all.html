@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab6-1</title>
+  </head>
+  <body>
+    <header
+      style="
+        font-size: 30px;
+        background-color: black;
+        color: wheat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: auto;
+        height: 70px;
+      "
+    >
+      Welcome To Home Page
+    </header>
+    <nav style="font-size: 20px; background-color: bisque; text-align: center;margin-top: 10px;">
+      <a href="#FormFirst" style="text-decoration: none; color: cadetblue"
+        >ContactForm</a
+      >
+    </nav>
+    <main
+      style="
+        width: 1300px;
+        height: 500px;
+        background-color: bisque;
+        margin: 10px 50px 10px 50px;
+        padding: 30px 10px;
+      "
+    >
+      <h2>Course Enrollment & Feedback Panal</h2>
+      <article>
+        Please fill out the corresponding form below. All system inputs use
+        native HTMLS constaint validation engines.
+      </article>
+
+      <section id="FormFirst">
+        <form>
+          <table style="margin-top: 20px">
+            <caption
+              style="text-align: start; font-weight: 800; font-size: 20px"
+            >
+              1.Contact Form
+            </caption>
+            <tr>
+              <td width="150px">Enter Name</td>
+              <td>
+                <input
+                  type="text"
+                  required
+                  name="name"
+                  minlength="3"
+                  maxlength="50"
+                  id="name"
+                  placeholder="Enter Name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Enter Email(with patten)</td>
+              <td>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  required
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                  maxlength="254"
+                  autocomplete="email"
+                  title="Please enter a valid email address (e.g., user@example.com)"
+                  placeholder="Enter Email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Enter Email</td>
+              <td>
+                <input
+                  type="email"
+                  name="email2"
+                  id="email2"
+                  required
+                  placeholder="Enter Email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Phone Number(with patten)</td>
+              <td>
+                <input
+                  type="text"
+                  name="moblie"
+                  id="moblie"
+                  required
+                  pattern="\d{10}"
+                  title="Enter Valid Phone Number"
+                  placeholder="Enter Number"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Phone Number</td>
+              <td>
+                <input
+                  type="tel"
+                  name="moblie2"
+                  pattern="\d{10}"
+                  id="moblie2"
+                  minlength="10"
+                  required
+                  placeholder="Enter Number"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>
+                <textarea
+                  cols="30"
+                  rows="4"
+                  name="Address"
+                  id="Address"
+                  required
+                  placeholder="Enter Address"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td><input type="date" name="Date" id="date" required /></td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>
+                <input
+                  type="number"
+                  min="18"
+                  max="100"
+                  name="Age"
+                  id="Age"
+                  placeholder="Enter Age"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" value="Submit" /></td>
+            </tr>
+          </table>
+        </form>
+      </section>
+    </main>
+    <footer
+      style="
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 50px;
+      "
+    >
+      <p>&COPY; By Brijrajsinh Rayjada</p>
+    </footer>
+  </body>
+</html>
