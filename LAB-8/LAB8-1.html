@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            width: 100%;
+        }
+
+        .logo {
+            border: 1px solid black;
+            width: 10%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .links {
+            border: 1px solid blue;
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding-left: 10px;
+        }
+        .body{
+            display: flex;
+        }
+        .left{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid orange;
+        }
+        .left > div{
+            border: 1px solid black;
+            display: flex;
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid green;
+            flex: 1;
+            gap: 10px;
+            padding: 10px;
+        }
+        .row{
+            border: 1px solid blue;
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            padding: 10px;
+        }
+        .row > div{
+            border: 1px dotted black;
+            display: flex;
+            flex: 1;
+        }
+        .footer{
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            border-left: 1px solid blue;
+            border-right:1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            Logo Here
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="left">
+            <div>RESULT</div>
+            <div>APPLY</div>
+            <div>PLACEMNT</div>
+            <div>RECURUMENT</div>
+            <div>NEWS</div>
+        </div>
+        <div class="right">
+            <div class="row">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        footer
+    </div>
+</body>
+
+</html>

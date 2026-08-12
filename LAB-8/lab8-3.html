@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab8-3</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .black{
+            height: 50px;
+            margin: 10px;
+            background-color: black;
+        }
+        .main{
+            width: 100%;
+            display: flex;
+        }
+        .sitebar{
+            margin-left: 10px;
+            color: yellow;
+            font-size: xx-large;
+            font-weight: 900;
+            width: 10%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .body{
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            flex-direction: column;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            color: white;
+            background-color: red;
+        }
+        .sitebar2{
+            width: 10%;
+        }
+        .content{
+            display: flex;
+            height: 200px;
+            gap: 5px;
+        }
+        .navigation{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 5px;
+            background-color: blue;
+        }
+        .content3{
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+        .content2{
+            background-color: yellow;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar3{
+            top: 0%;
+            position: absolute;
+            right: 0;
+            border: 5px solid white;
+            background-color: green;
+            height: 65%;
+            padding: 5px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;    
+        }
+        .footer{
+            height: 50px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="black"></div>
+        <div class="main">
+            <div class="sitebar">
+                Html<br> website<br> Layout
+            </div>
+            <div class="body">
+                <div class="header">Header</div>
+                <div class="content">
+                    <div class="navigation">Nevigation</div>
+                    <div class="content3">
+                    <div class="content2">Content</div>
+                    <div class="sidebar3">Sidebar</div>
+                    </div>
+                </div>
+                <div class="footer">Footer</div>
+            </div>
+            <div class="sitebar2"></div>
+        </div>
+    <div class="black"></div>
+
+</body>
+</html>
