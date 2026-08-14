@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab9-1</title>
+    <style>
+        .main{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            background-color: aqua;
+            height: 500px;     
+            position: relative;
+        }
+        .colorChange{
+            width: 50px;
+            background-color: black;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            animation: animation;
+            animation-delay: 1s;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            /* animation-direction: alternate-reverse; */
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: backwards;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        }
+        .innerdiv{
+            position: sticky;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .innerdiv:hover{
+            background-color: blue;
+        }
+        @keyframes animation{
+            0%{
+                background-color: black;
+                top: 0%;
+                left: 0%;
+                border-radius: 0%;
+                transform: rotate(0deg);
+            }
+            25%{
+                background-color: blue;
+                left: calc(100% - 50px);
+                top: 0%;
+                border-radius: 50%;
+                transform: rotate(180deg);
+            }
+            50%{
+                background-color: burlywood;
+                left: calc(100% - 50px);
+                top: 90%;
+                border-radius: 25%;
+                transform: rotate(360deg);
+            }
+            66%{
+                background-color: blue;
+                left: calc(50% - 50px);
+                top: 45%;
+                background-color: 50%;
+                transform: rotate(0deg);
+            }
+            75%{
+                background-color: cadetblue;
+                left: 0%;
+                border-radius: 50%;
+                top: 90%;
+                transform: rotate(540deg);
+            }
+            100%{
+                background-color: azure;
+                left: 0%;
+                border-radius: 25%;
+                transform: rotate(720deg);
+                top: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="colorChange">
+            <div class="innerdiv">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
