@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header bg-black p-2 h-45 text-white">
+            <h1 class="text-[40px]">site title</h1>
+            <p class="text-white/80  leading-0.5">fixed 1-column #2 layout (basic)</p>
+        </div>
+        <div class="grid grid-cols-4 p-2 gap-10">
+            <div class="left">
+                leftColumn
+                <div class="text-red-500 font-semibold flex flex-col underline decoration-red-500">
+                    <a href="">Link Item</a>
+                    <a href="">Link Item</a>
+                    <a href="">Link Item</a>
+                </div>
+                <div class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae aperiam tempore aliquam in incidunt
+                    sit, neque ea maiores architecto temporibus! Debitis ipsa tenetur rem magnam sit quo ex dicta. Odit!
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div class="centercolumn">
+                    <h1 class="text-[30px]">centerColumn</h1>
+                    <p class="pl-3 text-justify">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni quo illo expedita, minus
+                        nobis? Vitae deleniti assumenda quisquam excepturi magnam nesciunt in magni architecto? Mollitia
+                        sunt amet dignissimos dolor.
+                        Eius error id sequi unde deleniti tenetur cum voluptates reprehenderit rem. Adipisci quam, totam
+                        ut omnis animi expedita nihil suscipit facilis aspernatur ducimus eligendi magni molestias nam
+                        tempore sequi minima?
+                    </p>
+                </div>
+                <div class="header">
+                    <h1 class="text-[30px]">Header 2</h1>
+                    <div class="ps-10">
+                        <div class="text-red-500 font-semibold flex flex-col underline decoration-red-500">
+                            <a href="">Link Item</a>
+                        </div>
+                        <ul class="list-disc">
+                            <li>List Item</li>
+                            <li>List Item</li>
+                            <li>List Item</li>
+
+                            <ul class="list-disc ps-5">
+                                <li>List Item</li>
+                                <li>List Item</li>
+                            </ul>
+
+                        </ul>
+                        <div class="block bg-slate-300 p-5 border-b border-t">
+                            <p>blockquote</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellendus tenetur
+                                mollitia dolore ducimus voluptates at quasi ullam suscipit fugiat, blanditiis sit,
+                                laboriosam iste exercitationem, ad alias nihil dolor numquam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer flex gap-2 p-10 justify-center items-center underline font-semibold border-t border-t-black mt-20 text-red-500">
+            XHTML
+            <div class="border-1 border-red-500 h-5"></div>
+            CSS
+            <div class="border-1 border-red-500 h-5"></div>
+            WCAG
+            <div class="border-1 border-red-500 h-5"></div>
+            THE CSS Tinderbox
+        </div>
+    </div>
+</body>
+
+</html>

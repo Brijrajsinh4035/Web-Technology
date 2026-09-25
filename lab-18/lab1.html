@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=south"
+    />
+    <!--
+      Tailwind's utility classes can't express everything (a typing effect,
+      a custom fade-in curve) without a name to hook into. These @keyframes
+      are plain CSS; Tailwind then reaches them through the animate-[...]
+      arbitrary-value syntax used in items 8 and 9 below.
+    -->
+    <style>
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      @keyframes blink-caret {
+        50% { border-color: transparent; }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="">
+      <p>
+        1. Create a button that changes color and slightly scales up on hover.
+        (A)
+      </p>
+      <button
+        class="bg-blue-500 rounded-md p-2 shadow mx-2 hover:bg-blue-400 hover:scale-110 hover:shadow-md"
+      >
+        click me
+      </button>
+    </div>
+    <div>
+      <p>2. Make a hidden text fade in when card is hovered. (A)</p>
+      <div class="bg-slate-200 w-50 rounded-md mx-2 p-2 shadow-md">
+        <p class="hover:opacity-0 transition-opacity duration-1000">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+          cum nemo. Ut numquam natus doloremque totam dolorum eos molestias
+          nulla nemo ipsam odit expedita, nisi quis autem accusamus commodi
+          alias.
+        </p>
+      </div>
+    </div>
+    <div class="">
+      <p>3. Create an image that zooms in slowly on hover. (A)</p>
+      <img
+        class="ml-2 hover:scale-125 transition duration-1000"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAygMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAgMEBgcBAAj/xABJEAABAgQCBgUHCgQFAwUAAAACAQMABBESBSEGEyIxQVEUMlJhgRUjQnGRkqEHJDNTYnKxwdHwQ4KishYlY5ThRFTSNVWT4vH/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QAJhEAAgICAQQCAgMBAAAAAAAAAAECEQMhEgQTMVEUQSJhMjNCBf/aAAwDAQACEQMRAD8ARQIWEcsLsw+2yRxuckJSGHChsziQ7Ju9mGlk3Q9GIpIrixoViQ2MJbAfTGC8pIa1m4BL3YqeRIKMGyAscESM7YKjhhX9UvdhYybt9oNF7sJeVDFjYMCSdOJ8vgpH6UTG5CZ7JDBKWlSl+vC5ZfQxYwF5PsPYiS1h+xtwWctDZhldg7YDm2HwQyMkxHFlpUPRhbrtkQ3XomynSJjdodSPEUD3JkWguO784jeVmDO09n2L7aRdAOaQWVyyPC9ZEJdvajiqUSicia5MdiG63/ZiMJw6DsUw1sUSEHpRwboeRb/RgrLyTRgOtKAckg1ECkhQlpbztODb0kIdTqxEPVAfageYfFhiXOWalhsER/WGOlD9n3YFPPEfahm537ULGICCETGJYr4YmCsOJMtiIhsnG1t0YkkiarX2YU1LD2YU1MsO9QhjrzvR/wCbslCtjaRFewMT86BbV3V4RZsMZFmWEdn9IqTs6QdQoVL4u60GwXWipRlJEjKMWXQtV9mEtqwF1lsUZzEXzP6UvejzOIutdQut1oHtMLuovRC0fpDER9n7UVdvEnb9h2CQz42bZXQPBovmmSiCGHEhATrR9eHLxPqRfgGyAYkZw6EnYFxxIRWr7dm6OYlN9Bw1+ZtHzbezyquSV8VSC5MHijOZrHp6bBp+0WyJq7zYqvLd3ZrAR3GiPaNq3aVC5qvOLJPSmHS8n/6c24Vuzc2K5c1VarvivDhTE3c50UWBHrOC2oinjlSDRltPZZ9BMddxOcawY2LitIxcu3IiKtO/d8Yva4I+fUGMz0AmMOw/G2ptoic3suPERUbuyQs13UqlfXG4tnaG3C8jaZpxU0V0dH3/AE7feiOTHRDtNrai3Nu3xHfkWpg7j63ownuMYkvsCMsk6F1v9MS2GL9q2CDMlqj61w9mH7BDqwLmHyQMIS6vViP0ITPY60GjQYSAiHUGF8i+YLLDi6oNRzyX9kYLKUJviuTK5syp6Z1u1DBOlHUlXYUkmUddSijG1JnEdLtQ8LzscHD3/QEvdjq4fM9konKLL4yPawoSpR1JF+FJJPxOUScWIuj18dKTfCH2sNdPrxHKIKTGEdhfSYlJhXbKHmsG1vUKAc4BKEiAM0QRJZmHz6kF2tG9i63a+9BOTw9qX67W1C5ZI/QxY5fYJk5F93aPZ+9EnHZAT0enG9ePVEutSlCFfyg08Igzt2tiI7UZ5ptpALss7hrWyJBdbuqld5L30Wid8KtthTqKKJpbpftlKYOXVLamOK/d5JFaM57EGScmJ55y0qasiJUpTfypXKJPk4ZfGA1u004S+r1ZRYJfBpwNU6D9o3+c+7XNKVpTem6NGkjJ4Wiq4Li05h8yOpLrbFpZpn3R9I/J/jxY7orLTMwNr7ZEw6PCorSqV5pRYwPDpBo5l+bd+iE1FvvXgniv5xueh0s7g+j0nKS+rc2VMnLqopkqqq14pVaJ3IkLzeB2Hci2i9Z6McWYgUUxPGHWbH+VfziKOHvmdzs4X8sZrRp4MPE7CCdKIbQi0Fof3Qq770Aw1Eccfd7X4Qysy/2v6Y7cMevgaLSQ0T7p+kUJ1r/1he9C1c+zHaO9koqgtegWKMB6I+7Ehoh/Yw+3LiHXGHgaaD0YbYWiOJfZ/phGpv8ARifQI9SJYLBjsgJwweGdgoMqkeQYvkwWgM3hnbKHEw4e0UFbBjyjF8iqQNSRHtQ8EsPaiXaMdsGJyJQgTshSOQpAGBmkMx0TDSs+le2B9iqvwSnjETBk1FWDMTxfpZ6sC8xnb9unFe6tP3SKHizEnjEy+W1wBsmyyWi80/Hv3RJfnWps56WAhKZlWrHLSVF2qKtEThvqqRClpZ+UlmHNb6WyN1tErRfX/wAQ5aOdO57bK1imGTmHmTbpXCJIbBFmqbW/LvyXdBGc0gmegOD5M+cuCoa4SqG7eib8t9II42GtZY6QNzv1g7qUVUpy4omfCBx/OAFsCu+8SwalZUZOqZXsMUtc1riLVCVtvJOcafonjpSJ263XtekJckTenenxT1JFFHC3Wmbjt2esJVReVa0p8YnYajoGJBcO1dd+cE0mguX3Fm4SUy1PMi/Lu3D8UXkvJYkIA+mUZ5obiZS+KjLOu2sTWX3DStPbmnikaJqPtRknHizfiyc42eta7UcUB7RR7V/aj1n2oAaJsHtRy2FoMdtiqINoAwvZ7RR6keqUSiEXWl2oUhQhBhaJFltnqx0VjlIUkQo6ix1FjiQqkQo4qx5YUgx62IQRSPJ96F0jypEKOJ96KP8AKBiL7U40wF1osJaQ8CIlr8BRPGLxSM4+UN4enuls2y4Jd4ii/gvxg8fkTnf4EL5MpIJ09I8SdHssgX2hFVJfao+EIxqYKyTYatutQh3c1pkvNOEEvklbKX+T2em3f4z77w+pAFPxFYdRvDPMOzZC3aIsiRUS1SSiqiJvWiURM+7fDX5MuSNcaB+iejhYxjDU7MS2rwqXL0i+mIfRROzVFu4b0zzpW/lhlGA0wEZFhtkRlWtlltBSqkedE47s42zDHpGYk2iw8mylhFEHV8ERN1N6L3LGcfKbonOTGKP4+DrBSeoabcbI1QwVCQaolKKmaca1XdFQl+Wx8sdY9FYkcRmfO3sETTYir7gjlQqoirlRM09XDjFokpVo5Zp9p20SHat7W9VpwqnBIAaOaVSei2Kunicq65KzUtqnNWIquRVTZVURUoqovhBGaxfR4HhLBHZtyTe23G9QaJLVqiqirmqVypRe5VoiI66Zhy4vwuL2QcTxJ2Sx3D27vNPCtpZVQ0VNpF78o2bDpwZ6Qlpvq65oTt5VRFVPBcoxPSqW6VLN9GtcKXXXSzjed6IlSFF31yRU45UjTvk9m+m6MNbVxMm40XtuRPYQwvMtGrpGWW77Ue/mjlsetjMbrOqsJrHbY9bEJZyPR22PWxCENHI7rIq/lt/tMx3yy/2mIf2J+hfeh7LSjkKQoqqYw/8AWsR1MYf+tYiuxP0V3oey1XR1HIqyYw/9axCvK7/1rHuxOxP0V34ey0ocdvireVn/AK9j3VhSYs/9ax7qxfx5+id+HstF8duGKumLP/XsfGFpij/1rHuxPjz9E78PZZajGS/KTMa0MVs9IiHwEUFU9orF3TE3/rWPdWMz+UB4jwuWtO6ZnHPo+V1VX155eKxcccovYjLljKkjS8GkGsP0AlJRm3ZkRIreJEiES+Kqq+MZjj+JtO4lhogdrbLivEWfW3DSncirWL1j8+/KaMPtATeywjIiPgKeyMfxSbEMdljdutEEu9qwUYNPYuclKSa+jTJTGCkXhm8PLWOubJS7Y11m9VrwREzWvCvfRbmr+FaTYC70u3objdr7bjiCrKpRaEqLkqKiKi9yLGHJjDcvNsGDuruBbXBJdnazT98osbWKtGyL8vaU4VGi1fVfqqKlybqIqV5eyBlEZDL7GsIwGRkdLWZnEy12HyZFsk2K3olUbIs0TNaKiUzpWlIsU3J4dLzk5Nygk2MwSuiJUWikVyrSlKVVclrROMVmZxH0T85cSkJEPXVOs6XJMlonq7ormkOOk6DUtLlsiNpODvKir+/GCSb8gOmqDczijQYkUsGzrBvctLJHBVEQh5Vz8KRffkqmdjE5b0dYLo+KKi+xECMSwl/55ce1sr+/hGi6A4n0fGyFoh88xS0vBV/tSDnHlGi4tRdmzoseqMV5MUmf9OOpiUz/AKcZ+zIf8iJYajHKwA8pTnZbj3lKa7LcTtSJ34h+ox66AHlKZ7I+7HvKUz2R92J2ZE78TL+lOwoZp2I5gQdfZ/PvTmnfHhjtckzmbJSThQtJsv2MRKx1Ilool9LKOpNlEVEhaDEtEH+lwpJoojav70et+9E0QlpNlDoTZRAQP3b/AMwpE/f7WJogR6WRgQ9obetAPFrZ3G8NbIyIWX6255ICKqb+ap8YINBfMsN3F5x1A/NfwiA4d+kOxaQttu22jlmSfrGTLvIkFD2GcUeKYkHWu1T8UWA+EYfKTQTQ4hLNvat9BHWDmlBRcl30z3QVCWKYeabAftlupROHtpEHCD1rLr4DbrH3C9i0/KCdPJX6Li6TI2I6HyM0YlLvuS+11R2x76VWqe1U7oZxB6TmJZrCZICFqVqBTmSFURpaK5VVeKrlvy5HaxRprEGDmZmWl2y1fSTIXBouSlmqJX9pFZUktFxbZ3FmcQPWNS4kTRerZFKIg1TcnGkNYQwM7jEs3MavzboawcqKg0rku+tM/XBY5BgMKGbBhvX6gTuIeYouaV5KsD9FpBrEJ59ybMm3WbDAmypxWu+uWSQjE1LwPnFxWyVpeLTWkbQtNC210YUbbEURES4skRN2cKwF3VTktN222lZ4ZL+ZR3TQBPEpEj9IFH2Ei/nEfD0Ho0yNxWtlcP5fnDHpgXcTRUmyj3Sy/ZQKlntbLNOXdYU6xd0KUvtD70aFTEBNJ0o700u1AtHfu+9Hby+z+/CJSJYVSfLtQ508u0UBkW/s/H9I5cP1o+8sVxRLYRTRvDsMnBHXsaq1SblRAnCXmgiirVM99PjElzRsXQ1moYlhtX0ybKvC4dpE+EGpZ+TlwJvB5NhsSptC2qD3qtEqS/jzhmcnxC4piZIbR2htRKdyIiZLTdx9UefWWcfEmdt4oPyilvYU/eXR7Xx1lBtNaqlaIqVQa513b6QtjDNv58UzKD2nJYlT4bk74My88Tr2vaEbRqouFTdmnBN65LX48YI4WRTdrsxaNxVER4ZftPCG/MzexPxMbM5dxNsJnowbJF1SeFRvTgqJ39yrExo39cOtG5ovqx6vjVapGkTTTTTJXtN227TjxIiURK/tIFa5qYC2SY6WW4uqIAmWaqtee7vipdXlu0yviRKi5MCHo+8SIvgkecmpUPSIi7Nv51i3Bo/eZTMw6w2NturZb1YpXPrVRV55Iu/KsKTRaRDzmq1ltSuccNB4blyRYnzc/sD4ibKk0QuhcH7/AEiWEm+fUlny/kWLMk7Jy8yUlJFLNv8AWLViNUTwSlc03r7YGHpJiM6ZS2AyZPkP/VOCtlealSnjXP1Rrh18mvAEukS+wMwRS+PS17RfN23JgmyFUUqJTj64CYM70vHZlT6wsV2eFSTL2IkEJjpjWMTzeIPiUy3LWOuDklSVVy3brVT2xzRBjDpeZxebxB20iBoWbet6VaIuXojmuWe9Iasu+cjP2/ycUEHEsB0gdIdmlrY1VM815blpnziFggWYUxftay4/eJVT8YlThvyknMk61qycbLZzVKUomfCuyu6i08Y9gwEODyPZ1Af2pDMMk5Ni3Fod/kikYvgqtYw64YmTTxK6OrFMqqqqma8F/KCmJ6RT2Hzj7HRtoSXVkLaUt3otc+G/vrAmcmXwZJ+YmScmZgq25bHDjXlBZJ3pDIQa2HGnB8lCwFuywiCJGnZTJc4FYEjsljrF4l54SZLaFeFUXKvFINA201LXXF9ElxXrvWue/uit+US8pSztxWi6JjcS+iqKvqVUqnjGfCuLdDcj5eQrpsBX4eVtvXS73YiYUF/SW7rrmPjWlfisE9NEsk5Zz0hft57xX9IFaPua2fFv6xsg9qLSNDexMf4lkwBzW4aNm1aSp8a/nBG13sjAHRZy96cY9ESRR9Wac9+6D6t/ZEvb+sHF6FyWxOrd7MeUXez7v/7C9n0xt/fDKOo2P7Kvwi7BEbX2f5ihNHe0PvQtGPu/vxjvR2OyMSyB4JPHJsybdImxLsiLYp31VCWufa9kLawTVTjDEwWsJypkVqkiUpSqruVa7vXD4LPTBjY04w1d9JrKVou9F35fFF4RJKUHU6yYfcHZResNd2a55504qi5x560d6huew8jZJiXnmCdHZJsbRVE4rxoqclTjw3wxhmvl3ujOiTDQ0QSl7SzVVVVNVrbn+MT8KmhPWty8iNzezriFFVVqqb/Wm6vCFYlPPmFutHzZIu0OScqUTPOi8N0S0WkyBiUi6E40WobcESq4ThmRqidmqKicd5eEFGcQaMCJpgWxHJwSHaCtErXNN1eMRJApl3aAmyY+zeOfHlT1V9cSGBYa84Dvnbdm30Yqy2hQz0mdpNMNkJbOsIhoi7qb98MYi7PdJGWBomGHBqTzLBOEHdVVonsy+CSAUTuv1ZFkRERJvyoq1XLhC1mb7r3RccyEiEqp3IiIma98VyZOKAGH6NNSLxEYuTI9cdddu47q0XuovGsK1c1tdHYYlhIfScGqc7cs19aJ+EF3ZrzLota0SztIWiJTLgKKuSL4puWAeLYlicvITLkw1q2BaW211N5VGpIqVyXh8YitskqiijSF+IM49NgV3nwbEi5Ci1VferCtFU1ukkiw1tXEW0QoqJQVVFou/NPhCNGwv0e1X/ePm4RcF2qbu+iJBTRSXs0hlht2RbcMvdUad29KcY6k1UGcaMrzUS9OkKUlpwXXRcdINq0aJ1U71p7ePtbwxl2XlhG7zFtlxNOCKZJtZLlu319cSNOZIWukudV2YAQFsiWiIqoKoKLzpFhx2YlsPw2eIGJbXsyzhi3qkKiiKql1NyZcYxz3CKRtxY1KU+Rnul05LYZPSKtPtuP2LrG2yJVQaoqIVUqlc8v1ipzk50t4XLdosreWa/GB5E688ThkTjjhVMi4qu9YJglhk5tXWoA7O5aer1xvxx4xqxEq8oOKvzB2/tJ/asVSeWzVEGzbmJd/OLQtwSbon3L8F/VYAYRJeWMVlsN1oti8q1cHOlBVfHcqeMVilVskk3SLrpZhsyejYz1tzAk2QuCQ0WtRTcta1WKfgb2qxJhwOsJfv4xpWlEnqtDH5RotW02LSCNy2oiENMss867oy2RXo84NhdUvziYc3cTYWTD29Fpwv5vpI6ICIi4KiJc03/iixZaj1f7coqLsxZOYfiBiJWmTJN8F1ZIi151QvxjVmcMwx3zr2DiN31bhlwTs1okTL1KxVoCHTvI9FXO3s+9+84RT3f33waxbRqTsJ+Xdm5QRz1Y0LdyQlReedaQEYwWZOZHVYmItF/EcEVVVzqNEPfXKFrr4+i30Ux5Ba636fkkK812v6okzGAS0ubTcxipC+4KEOsAEQ/UKuIsPf4OH/wB6H/4v/vAP/oR9E+FkLAuK2BsSzm0KW6zrKtVqtFrVKLX27uHmJAp5kX7biuTrNJalKZKtUUuWVUSu5d8LF4QBibm5ZzpL1NlwRJUJaUEU3IvrzTjE2bN3UiwAltfSbVVVd9Krw4+HKqRjVM3t14Ijzcm0y620xaWV2roiUSlBXgicF457oZR9iYtm5vVj5vq30VSStMkRFVN/48offWxkimGvMNt3EI71pVVX2ZInCnhCRaF3UXi2VoKXnAJtlEXglcyWm9EWicV5ziTkNmcnNmI9JfEvq2yVUXLLJfzom7etIXPA1MAN427SBriFUJc0VVREVEVfCmfhEfHdIMOwdnV6hvWuChC4y1aAou6pUWte5N3LfFTf0tID1gTm1uEWyEaJwpW6qepPjE4lciw4sPk89ZLkT9xdVwVupzUlz35UpSB8tiEzLmLh4Y+4ORXOVWxdyb0rv3U8N8BZrTl0Nnye8O11tZvXtKtFXvTdvrSJbel8ziZ3G+TbA0TVt7OdErmqou9OcVKElsJTvVk1rFZWYmbpicJh0shF4rUrVUyJUVKc8qwjTE5k8HHD2tp14hRsrslUltTciZVJOHjFcxGbwzELpZ0iuZr5ws+GVy0zRfb3rD2ES7rXQda6Uy1rSNvZXIUTLjln+MMxLaYrLJ1Q27LdCkJHDdktTajpCWSqlV9irnC9E7mseJwCIbWlG3fRFRF48qJnDGIuOuz46oR1Tcz4LaiKvwqnjD+iOIMBjwuzBCRXEFo9UUWqJ6s0T11jdPcGc3F/amTtLXukPSzVxEJGwm0KItVdWtO6ipEjT7Ei/wALOttTL49IIQIRFBRKkiqhIiZVSuWda5xJ0mFh3G8KLVNj87YuurSglVa1RFThwirfKPjI4g81h8jaTDLl7hN9VToqIgrxREVarzVOUZ4RtxOgpJcyt4WE5MTNoP2sN9bzY1pxTdxpEDF5+ZCZcbafLVZLs0T8Eg9Z5PwoWA+ne63/ACvqzioTCiZuEHVu+Gf6RsMt7Lc0V8h94E2v5Y78mUtbpQ2bv8EXNq5E9FU45Z3Q9LS9+FCQdawfiMPfJk01NvTbDr+ofbaT0VVTG5KqiJxSgp6qRmbqEh0F+aNB0rmZZ3RXExaaK0mCUSEU3ol1Voq8oxQWtsrOt1tr1xuszh8j5NfY1RTLpNFcTl6ZqK8ERaZ07sow0BLU3APW6sD0L/Fob1XlMsaKJ6MYgVt0zLzQOtkO/bohJXltIvhGg6PzmFTeAybkxJjrdUiOEIkiqqJRd1M6pzjO8GQ3gnpY9kZxpA1luV6trRPaI+2LD8n0yM7hQymz5sqjcKrv70RaZ19sTq4Nwf6ZXTSSmjQG25FoLmifH7rpqvdmqr7IjJLycwZONPzbZNl5y4ly4518F8YQODzOptB1hghzbITVVTvStvxRYjlgb8uBOS+rfEvpHL0qu/mtPBMu6OYb9EzyTLbJBOefurrNU1X1XKNfjEvobX1v9Zf+UVZJvoMzq9a4279ly7wqlUTnRYI+WHf+8L/bJF0QJuzEteIhOMP7SFdcq59yJVVz3IkTkedP6VoR7IiNxr4VonivsiDNY1PS7I+aFgbaXFu8IrmIY2IHrHSHaKpb0Rd+/inshql6EuPstb0ze8LQNN7Q7Qk4ib+G9KxCnp4cJkLQfFtq1bW26qvOiCifGKbiGlQvSZNNfQD/AA5faNe5VTNd3cnPnFcZx9q+2XFwSKtusFUt7kXf4boPjJ7oU5peA3P4vKzev/y76YrfPEdeCKqqir35fFEgcxJYPs6on7bqW5ZKmdM07+KxEOefm3ibNpwX9w7Kori5dyIsWPDdDX515gcQJsRIaETJ3WUypVERK57kVab15KTVLzQtXJg1x2RBkm7iFhv0bRReWVc4ewzCZbEJxiWCZKWaI0TzYopZ0T49607uEWdv5PcMOZ1YPutkO1cRISUVck3IqZJTem5ad1mXDGJS3oknJETYoglao0SlOtVV3c61hd1tMbwd7IGHaN4Vg4ELTBPlb9I55xfXRck9kVYMRYOfnL7dbqKtN9kb0VVTxtT1KsWvHZzFZSTfLo0sIkNpODMqRZ0TIVQab++MxZcvnsbmzt+bywS9w8blVVpTwSNPTxu2zP1MqSSEtOk7hREBW3EXeu1kvxTf3RE0aTo8yT5jcXojdRdy7vhCmEd/wxJk0P0in6VESrhrn4JEvCpOzrlrNYY3EOVEyTjvy4xrk9GTHpk/5SXXzeEXRESy822Skm5FXOiV3pwiuFL6rVYhNu6wrfNNlxLiq8kSDmkE4UpOMTLrTkyWqIRbLNTuG3P4Z78oqb0/PTcyTjrBFsps20sROCJExqlQXJttjuMP2SBOGZE4RLbwzXKvsr7Yrgh82cL7aIPPctfyizS+AT2koYgeHlrSkGhPU25ncq7Kd6Ii+ulIrYqIhqz2SE1X4boNUHGOi/4Yz/k7BH9UH9sP/JpLC7jpzrTBP6uWo4I02VUhVCzVOSxzDA/yFja/6Ztf6UiL8l85PBic90FtxdcwIlvVUota5ZZZ7+cZpahIbH+aNWmZn+Fa4w0Q/SXpdmuVBRc+Pq7+GEuj0c5lv0WXVRsu5CVK+yN7aTWybDZtPkQ7Q64qUWi5qqUz/WMS0gk+j49irBiIiL7lreSJ1lXLuSE9E9tD+qWkyTJzFmGi71ejkDw8UW00Ld6kgtoHK+T9LcTwR26255kRbtWqiqqipWqbkVfGK20F8mNhCOsEgLlSkEZR9zDNP2n2XbfOsO6y3IUcbFVWlc6IS+ukbc0bTX6MmN07/Zqs3JYmD3zScEWrV83bctVREpnVPBKJAc8LmZg/nDUzOjaikQvqg13ItEWn584shuWXaotc4Xq31SqINN6rEecxKelAfLUazVihONiQ5JllkqImS1XflHFOsrqwfIk7h/mGpZuWuLrZpeue8kRVXJOaR7p2J9ln/dkn5xMYCcnWRGYkR85Q9YTqKqLcqoginGnGv6rMWXdqtOk04dX/AMYrwXaMPf0pnJp4XDmXHNZslrDLJU41TOi5LTOJ2EMz07b0vGJRsXP4bhK67nyEfzVIushozohg+1ic8y+56Q7KKK/y5px3rxgi3j+GSQdG0fwyZcEh/gtNsiXrJUqvsrG55If5RjWN3sqrWjeA7XSMcGSEaXC4+22S5ptWJmiLwRc89/CDeHzWB4CzrGpzpLV1/o0Ncs+ZKnDlwpHXhxrGzGWdkZaWlrriFwjJF40KgoKryqMTZbRmTCcGZmJknybJLRFtsQSmapREoicaJSFzkmtsbGO9IS2eK6QBr3Rbbw/WITYuMIzeKZ51VSVOS5RIwqTmbybdnptiWEVt6OS6nNeqKqqqvqpwgu+Yl/Ab1WX0dM14UolK+qPI5M33G0LA+iRcfXX8/ZCnKwuFDLuGbFrU5NlxtJ1EuXiq5JC11rQW620vtGq1+CU8I6c4xKB87mmGxL7Q1+GSw23OtTG00w+/w1jgEg/BFr4VgHEOLoiYsf8AlolMbI6y67miJXLKM6xZtrCtG3CO7XzzuvK7gO4EzpuSi8c1XwuekrwgG2XVFf4aj1qIioi51/fqo/yoTwvPALWyNqbOeXLeldyJvjd06aSRzepXObZGbdvw7D5IOt0UCErqIJLVVy41QvgkGMJuM2mOrcNtpUqiIma7uS/hA9iUYv23S17IjqtXv2QRUTvzL4d0H8GRhqZaE7idFqpXb0RVzz4qqw/J4Mt02QdImCdnNY0VvRxFPZVfypFbmcUmmjIZ0mNr6tpapxTPckWTGZzyfc/cP0iBdyohZrzSsVDFn+liTz5CZUrs7t3BaJy30hkfBWN6o0b5MsHfwzDZvEcQIm3cQIDbZ3KgjWhFWma3KtOVOeVd+UTQ/wCcP47g5C5KuUcfb3KCqqIpDzRVVFXjVV8NJxCf6X5pp1ttpwfpC2d6bgStVXPfmiZ+qBOk5Mf4SxCWaducJpSEh6tRzQVPcq5bq1zpGFZp92zrPHHt8fRQ5SdswRhj0haEPhSLB8mCvyoOsS+y+Io644RLRxFWiBknrzTv5RUmlvlhL/SibgeIT2EyboyIjMlMDUvO0K0aog5JzJdyotVjTOPKLSMmOVTVmxuTgtM6+YEdQO3cJrbTiuaJX1ZxjOlbzE9pDiE7KO+YJwTbt9NCFF/WCLOIaUYhawQt4dLDl5sdycKJnn3rAfG2SDEnRPrECE5buuQU3Zbs19kL6fHxlsb1MrjojyCfNhv/AIbqexaxJ0mS/EcKINkZjDmgEt1SBSFV/p398RkMTN+wet6I+jShV8M4d0sdc8lYU4Nt0k662hU5qhpXxQo2y8oyR3aNLXSyWCQw98Nl0mkN0cqqeYqKVyyVFglJG7id2qfbbFwFFwhJHDVC3pmlESnjVeGarQsAdw52QfGbYccfuQ2rXSSxCRFTZRaLnVa0zrEkZV/UjY7521SIbVp7afpwjlTwpSOlim5QTNU1TUuy1LND5psUC4i4JwVd6qvPvrENvF5JtsQcxFq8URCqS74zVqfxOUMtq64UG4SS5KbkSiUT2eyJ/lnFf+2Y/wBs3AdoM//Z"
+        alt="image"
+      />
+    </div>
+
+    <div>
+      <p>4. Build a sidebar that slides in/out using a button toggle. (B)</p>
+
+      <!--
+        Pure-CSS toggle: a hidden checkbox holds the open/closed state.
+        Every label with the matching "for" attribute toggles it on click,
+        and peer-checked: picks up that state on the elements below it.
+      -->
+      <input type="checkbox" id="sidebar-toggle-4" class="peer hidden" />
+
+      <!-- <label
+        for="sidebar-toggle-4"
+        class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300 z-30 cursor-pointer"
+      ></label> -->
+
+      <label
+        for="sidebar-toggle-4"
+        class="inline-block bg-blue-500 rounded-md p-2 shadow mx-2 hover:bg-blue-700 hover:scale-110 hover:shadow-md cursor-pointer select-none"
+      >
+        Show up
+      </label>
+
+      <aside
+        class="fixed top-0 left-0 h-full w-64 bg-slate-800 text-white z-40 -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b border-slate-700">
+          <span class="font-semibold">Menu</span>
+          <label for="sidebar-toggle-4" class="p-1 rounded hover:bg-slate-700 cursor-pointer">✕</label>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a href="#" class="block px-3 py-2 rounded hover:bg-slate-700">Home</a>
+          <a href="#" class="block px-3 py-2 rounded hover:bg-slate-700">About</a>
+          <a href="#" class="block px-3 py-2 rounded hover:bg-slate-700">Contact</a>
+        </nav>
+      </aside>
+    </div>
+
+    <div>
+      <p>5. Create a notification badge with a pulsing glow. (B)</p>
+      <div
+        class="relative bg-slate-200 mx-5 min-w-max p-2 rounded-lg shadow-lg hover:bg-slate-400"
+      >
+        this is massage
+        <span
+          class="absolute -top-1.5 -right-1.5 h-3.5 w-3.5 rounded-full bg-red-500 shadow-[0_0_10px_4px_rgba(239,68,68,0.75)] animate-pulse"
+        ></span>
+      </div>
+    </div>
+
+    <div>
+      <p>6. Build a CSS-only spinner using Tailwind. (C)</p>
+      <!-- animate-spin is a built-in Tailwind utility; the two-tone border does the rest -->
+      <div class="h-8 w-8 rounded-full border-4 border-slate-300 border-t-blue-500 animate-spin mx-2"></div>
+    </div>
+
+    <div>
+      <p>7. Put a download arrow icon that bounces repeatedly. (C)</p>
+      <div>
+        <span class="material-symbols-outlined animate-bounce m-2">
+          south
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <p>8. Simulate a typing e ect with blinking cursor. (C)</p>
+      <!-- Custom "typing" and "blink-caret" keyframes (defined in <head>) driven through animate-[...] -->
+      <p
+        class="mx-2 inline-block overflow-hidden whitespace-nowrap border-r-2 border-slate-800 font-mono animate-[typing_3.5s_steps(24,end)_infinite,blink-caret_0.7s_step-end_infinite]"
+      >
+        Hello, this is a typing effect! lore
+      </p>
+    </div>
+
+    <div>
+      <p>9. Create a section that fades in when page loads. (B)</p>
+      <!-- Custom "fadeIn" keyframe, applied once with the forwards fill-mode -->
+      <section class="mx-2 p-4 bg-slate-200 rounded-md shadow animate-[fadeIn_1s_ease-out_forwards]">
+        This section fades in when the page loads.
+      </section>
+    </div>
+
+    <div>
+      <p>10. Create a button with a ripple animation when clicked. (C)</p>
+      <div>
+        <button
+          class="relative overflow-hidden bg-blue-500 rounded-md p-2 shadow mx-2 text-white
+                 after:content-[''] after:absolute after:inset-0 after:m-auto after:h-0 after:w-0
+                 after:rounded-full after:bg-white/40 after:transition-all after:duration-500 after:ease-out
+                 active:after:h-40 active:after:w-40"
+        >
+          click me
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
