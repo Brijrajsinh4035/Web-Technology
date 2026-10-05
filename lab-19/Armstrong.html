@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="answer"></p>
+    <script>
+        var answer = document.getElementById("answer");
+        var n = Number(prompt("Enter Number"));
+        var count=0,rem=0,a=0,temp=n,p=1;
+
+        while(n>0){
+            count++;
+            n = parseInt(n/10);
+        }
+        console.log(count);
+
+        n=temp;
+        console.log(n);
+        while(n>0){
+            rem=n%10;
+            console.log(`rem ${rem}`);
+            for(var i = 0;i<count;i++){
+                p*=rem;
+            }
+            console.log(p);
+            a+=p;
+            p=1;
+            n=parseInt(n/10);
+        }
+        if(temp==a){
+            answer.innerText = `${temp} number is armstrong ${a}`;
+        }else{
+            answer.innerText = `${temp} number is not armstrong ${a}`;
+        }
+
+    </script>
+</body>
+</html>

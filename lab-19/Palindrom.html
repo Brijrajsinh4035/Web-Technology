@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="answer"></p>
+    <script>
+        var answer = document.getElementById("answer");
+        var n = Number(prompt("Enter Number"));
+        var rem = 0,rev = 0,temp = n;
+        while(n>0){
+            rem = n%10;
+            console.log(rem);
+            rev = (rev*10) + rem;
+            console.log(rev);
+            n = parseInt( n / 10);
+        }
+        if(rev==temp){
+            answer.innerText = `${temp} Number is Palindrome ${rev}`;
+        }else{
+            answer.innerText = `${temp} Number is not Palindrome ${rev}`;
+        }
+    </script>
+</body>
+</html>

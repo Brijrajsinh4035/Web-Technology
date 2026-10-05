@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="answer"></p>
+
+    <script>
+       let first = prompt("enter first number");
+       let second = prompt("enter second number");
+       let opration = prompt("enter opration (/,*,-,+,%)");
+       let answer = document.getElementById('answer');
+
+       switch(opration){
+        case "+":
+            answer.innerText=Number(first)+Number(second);
+            break;
+        case "-":
+            answer.innerText=Number(first)-Number(second);
+            break;
+        case "*":
+            answer.innerHTML=Number(first)*Number(second);
+            break;
+        case "/":
+            answer.innerText=Number(first)/Number(second);
+            break;
+        case "%":
+            answer.innerText=Number(first)%Number(second);10
+            break;
+        default:
+            answer.innerText = "enter valid opration";
+            break;    
+       }
+    </script>
+</body>
+</html>
