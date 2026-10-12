@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="qu" name="ans">
+    <button id="ans">Submit</button>
+    <p id="re"></p>
+    <script>
+        var a = document.getElementById("ans");
+
+        a.addEventListener('click', () => {
+            var q = document.getElementById("qu").value;
+            console.log(q);
+            var arr = q.split(",").map(Number);
+            console.log(arr);
+
+            
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+
+            var r = document.getElementById("re");
+            r.innerHTML = "";  
+            arr.forEach(e => {
+                r.innerHTML += `${e} <br>`;
+            });
+
+        })
+
+    </script>
+</body>
+
+</html>

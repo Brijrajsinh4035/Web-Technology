@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="answer"></p>
+    <script>
+        var f = Number(prompt("Enter First Number"));
+        var s = Number(prompt("Enter Second Number"));
+        var ans = document.getElementById("answer");
+        var flag=0;
+        for(var i=f;i<=s;i++){
+            flag=0;
+            for(var j=2;j<i;j++){
+                if(i%j==0){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                ans.innerHTML += `${i} <br>`;
+            }
+        }
+    </script>
+</body>
+</html>
+

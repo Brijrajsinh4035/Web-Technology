@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="qu" name="ans">
+    <input type="text" id="qu2" name="ans">
+    <button id="ans">Submit</button>
+    <p id="re"></p>
+    <script>
+        var a = document.getElementById("ans");
+        
+        a.addEventListener('click',()=>{
+            var q = document.getElementById("qu").value.toLowerCase();
+            var q2 = document.getElementById("qu2").value.trim().toLowerCase();
+            var r = document.getElementById("re");
+            console.log(q);
+            var arr = q.split(/\s+/);
+            console.log(arr);
+
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]===q2){
+                   r.innerHTML = `${i}`;
+                   break; 
+                }
+            }
+
+            if(i==arr.length){
+                r.innerHTML = `word is not found`;
+            }
+            
+        })
+    </script>
+</body>
+</html>

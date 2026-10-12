@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ans"></p>
+    <script>
+        var f = Number(prompt("Enter First Number"));
+        var s = Number(prompt("Enter Second Number"));
+        var max = Math.min(f,s);
+        var ans = document.getElementById("ans");
+        for(let i=2;i<=max;i++){
+            if(f%i==0 && s%i==0){
+                ans.innerHTML=`${i}`;
+            }
+        }
+    </script>
+</body>
+</html>
