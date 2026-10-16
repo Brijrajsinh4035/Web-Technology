@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,tr,th{
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<h1>product details</h1>
+    <table id="t1" border="1">
+        <thead>
+        <tr>
+            <th>pid</th>
+            <th>name</th>
+            <th>price</th>
+        </tr>
+        </thead>
+    </table>
+<body>
+    <script>
+        const faculty = [
+            {
+                fid: 101,
+                name: "apple",
+                price: 500
+            }, {
+                fid: 102,
+                name: "fan",
+                price: 2000
+            }, {
+                fid: 103,
+                name: "TV",
+                price: 100000
+            }
+        ]
+        var sum = 0
+
+        var tab1 = document.getElementById("t1");
+
+        faculty.forEach((e)=>{
+            tab1.innerHTML += `<tr><td>${e.fid}</td><td>${e.name}</td><td>${e.price}</td></tr>`; 
+            sum +=e.price; 
+        })
+
+        tab1.innerHTML += `<tr><th colspan="2">total</th><td>${sum}</td></tr>`
+    </script>
+</body>
+
+</html>

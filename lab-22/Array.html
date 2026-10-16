@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="arr">
+    <br>
+    <button id="push">Push</button>
+    <button id="pop">Pop</button>
+    <button id="shift">Shift</button>
+    <button id="unshift">Unshift</button>
+    <button id="splice">Splice</button>
+    <button id="sort">Sort</button>
+    
+    <p id="ans"></p>
+    
+    <label for="first">start index</label>
+    <input type="text" id="first"><br>
+    <label for="delete">delete number</label>
+    <input type="text" id="delete">
+
+    <script>
+        var ans = document.getElementById("ans");
+        var arr = [];
+        var push = document.getElementById('push');
+        var pop = document.getElementById('pop');
+        var shift = document.getElementById('shift');
+        var unshift = document.getElementById('unshift');
+        var sort = document.getElementById('sort');
+        var splice = document.getElementById('splice');
+
+        push.addEventListener('click', () => {
+            var a = document.getElementById('arr');
+            console.log(a);
+            
+            arr.push(a.value)
+            console.log(arr);
+            ans.innerHTML = `${arr}`;
+            a.value = "";
+        });
+        
+        pop.addEventListener('click',()=>{
+            arr.pop();
+            ans.innerHTML = `${arr}`;
+        })
+        
+        shift.addEventListener('click',()=>{
+            arr.shift();
+            ans.innerHTML = `${arr}`;
+        })
+        
+        unshift.addEventListener('click',()=>{
+            var a = document.getElementById('arr');
+            arr.unshift(a.value);
+            ans.innerHTML = `${arr}`;
+            a.value = '';
+        })
+        
+        splice.addEventListener('click',()=>{
+            var f = document.getElementById('first');
+            var d = document.getElementById('delete');
+            arr.splice(f.value,d.value);
+            ans.innerHTML = `${arr}`;
+            f.value = "";
+            d.value = "";
+        })
+        
+        sort.addEventListener('click',()=>{
+            arr.sort((a,b)=>a-b);
+            ans.innerHTML = `${arr}`;
+        })
+    </script>
+</body>
+
+</html>

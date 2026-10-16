@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>faculty details</h1>
+    <table id="t1" border="1">
+        <thead>
+        <tr>
+            <td>fid</td>
+            <td>name</td>
+        </tr>
+        </thead>
+    </table>
+<body>
+    <script>
+        const faculty = [
+            {
+                fid: 101,
+                name: "raj"
+            }, {
+                fid: 102,
+                name: "het"
+            }, {
+                fid: 103,
+                name: "meet"
+            }
+        ]
+
+        var tab1 = document.getElementById("t1");
+
+        faculty.forEach((e)=>{
+            tab1.innerHTML += `<tr><td>${e.fid}</td><td>${e.name}</td></tr>` 
+        })
+
+        tab1.innerHTML += `<tr><td>total</td><td>${faculty.length}</td></tr>`
+    </script>
+</body>
+
+</html>
