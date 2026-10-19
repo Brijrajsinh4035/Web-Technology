@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="Enrollment">Enrollment No</label>
+    <input type="text" id="eno" name="Enrollment" />
+    <br />
+
+    <label for="UserName">Enter UserName</label>
+    <input type="text" id="name" name="UserName" required />
+    <br />
+    <label for="Email">Enter Email</label>
+    <input type="text" id="email" name="Email" />
+    <br />
+
+    <label for="Password">Enter Password</label>
+    <input type="text" pattern="" id="password" name="Password" />
+    <br />
+
+    <label for="RPassword">Re-Enter Password</label>
+    <input type="text" pattern="" id="rpassword" name="RPassword" />
+    <br />
+
+    <label for="Age">Enter Age</label>
+    <input type="number" max="100" min="1" id="age" /><br />
+    <button id="Submit">Submit</button>
+
+    <script>
+      var sub = document.getElementById("Submit");
+
+      sub.addEventListener("click", (e) => {
+        e.preventDefault();
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var rpassword = document.getElementById("rpassword");
+        var age = document.getElementById("age");
+        var eno = document.getElementById("eno");
+
+        if (!/^[a-zA-Z]{8,}$/.test(name.value))
+          return console.log("enter valid name");
+
+        if (!/^(?=.*[0-9])(?=.*[!@#$%^&*]).{8,12}$/.test(password.value))
+          return console.log("enter valid password");
+
+        if (rpassword.value != password.value)
+          return console.log("password is not match");
+
+        if (age.value < 18) return console.log("age should greater than 18");
+
+        if(!/^[0-9]{11}$/.test(eno.value))
+            return console.log("enter valid eno number");
+        
+        if(!/^[a-z0-9_-]+@[a-z0-9-]+(?:\.[a-z]{2,})$/.test(email.value))
+            return console.log("enter valid email address");
+            
+        console.log("form is vali");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="question" placeholder="Enter value"><Br>
+    <button id="clean">AC</button>
+    <button class="number" onclick="SetInputvalue(7)">7</button>
+    <button class="number" onclick="SetInputvalue(8)">8</button>
+    <button class="number" onclick="SetInputvalue(8)">9</button><br>
+    
+    
+    <button class="number" onclick="SetInputvalue('+')">+</button>
+    <button class="number" onclick="SetInputvalue(4)">4</button>
+    <button class="number" onclick="SetInputvalue(5)">5</button>
+    <button class="number" onclick="SetInputvalue(6)">6</button><br>
+    
+    
+    <button class="number" onclick="SetInputvalue('-')">-</button>
+    <button class="number" onclick="SetInputvalue(1)">1</button>
+    <button class="number" onclick="SetInputvalue(2)">2</button>
+    <button class="number" onclick="SetInputvalue(3)">3</button><br>
+    
+    <button class="number" onclick="SetInputvalue('*')">*</button>
+    <button class="number" onclick="SetInputvalue('/')">/</button>
+    <button class="number" onclick="SetInputvalue('%')">%</button>
+    <button onclick="removeLast()"><</button>
+    <button id="answer">=</button>
+
+    <script>
+        var clean = document.getElementById("clean");
+        var answer = document.getElementById("answer");
+
+        function removeLast(){
+            var qu = document.getElementById('question');
+            var length = qu.value.length;
+            console.log(length);
+            var rm = qu.value.substring(0,length-1);
+            console.log(rm);
+            qu.value = rm;
+        }
+
+        answer.addEventListener('click',()=>{
+            var qu = document.getElementById('question');
+            var ans = eval(qu.value);
+            console.log(ans);
+            qu.value = `${ans}`;
+        })
+
+        clean.addEventListener('click',()=>{
+            var qu = document.getElementById('question');
+            qu.value = "";
+        });
+
+        function SetInputvalue(e){
+            var qu = document.getElementById('question');
+            console.log(e);
+            console.log(qu.value += `${e}`);
+        }
+
+    </script>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" id="question" placeholder="Enter value">
+    <br>
+
+    <button id="clean">AC</button>
+    <button class="number" data-value="7">7</button>
+    <button class="number" data-value="8">8</button>
+    <button class="number" data-value="9">9</button>
+    <br>
+
+    <button class="number" data-value="+">+</button>
+    <button class="number" data-value="4">4</button>
+    <button class="number" data-value="5">5</button>
+    <button class="number" data-value="6">6</button>
+    <br>
+
+    <button class="number" data-value="-">-</button>
+    <button class="number" data-value="1">1</button>
+    <button class="number" data-value="2">2</button>
+    <button class="number" data-value="3">3</button>
+    <br>
+
+    <button class="number" data-value="*">*</button>
+    <button class="number" data-value="/">/</button>
+    <button class="number" data-value="%">%</button>
+    <button id="backspace">&lt;</button>
+    <button id="answer">=</button>
+
+    <script>
+        const question = document.getElementById("question");
+        const clean = document.getElementById("clean");
+        const answer = document.getElementById("answer");
+        const backspace = document.getElementById("backspace");
+        const buttons = document.querySelectorAll(".number");
+
+        buttons.forEach((button)=>{
+            button.addEventListener('click',()=>{
+                question.value += button.dataset.value;
+            })
+        })
+
+        clean.addEventListener("click", function() {
+            question.value = "";
+        });
+
+        backspace.addEventListener("click", function() {
+            question.value = question.value.slice(0, -1);
+        });
+
+        answer.addEventListener("click", function() {
+            try {
+                if (question.value.trim() === "") {
+                    return;
+                }
+
+                const result = eval(question.value);
+
+                if (typeof result !== "number" ||
+                    !Number.isFinite(result)) {
+                    question.value = "Error";
+                    return;
+                }
+
+                question.value = result;
+            } catch (error) {
+                question.value = "Error";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+        .calc {
+            width: 280px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        #question {
+            grid-column: 1 / -1;
+            font-size: 1.5rem;
+            padding: 12px;
+            text-align: right;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        button {
+            font-size: 1.1rem;
+            padding: 14px 0;
+            cursor: pointer;
+        }
+        #answer { grid-column: span 2; }
+        .error { outline: 2px solid #c0392b; }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <input type="text" id="question" placeholder="0" autocomplete="off">
+
+        <button id="clean">AC</button>
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+
+        <button data-value="+">+</button>
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+
+        <button data-value="-">-</button>
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+
+        <button data-value="*">*</button>
+        <button data-value="/">/</button>
+        <button data-value="%">%</button>
+        <button id="backspace" aria-label="Delete last character">&lt;</button>
+
+        <button data-value="0">0</button>
+        <button data-value=".">.</button>
+        <button id="answer">=</button>
+    </div>
+
+    <script>
+        const input = document.getElementById('question');
+
+        // Buttons with a data-value add that value to the input
+        document.querySelectorAll('button[data-value]').forEach(btn => {
+            btn.addEventListener('click', () => appendValue(btn.dataset.value));
+        });
+
+        document.getElementById('clean').addEventListener('click', () => {
+            input.value = '';
+            input.classList.remove('error');
+        });
+
+        document.getElementById('backspace').addEventListener('click', () => {
+            input.value = input.value.slice(0, -1);
+        });
+
+        document.getElementById('answer').addEventListener('click', calculate);
+
+        // Press Enter to calculate
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') calculate();
+        });
+
+        function appendValue(value) {
+            input.classList.remove('error');
+            input.value += value;
+            input.focus();
+        }
+
+        function calculate() {
+            const expression = input.value.trim();
+            if (!expression) return;
+
+            // Only allow digits, operators, dots, parentheses and spaces
+            if (!/^[0-9+\-*/%.() ]+$/.test(expression)) {
+                return showError();
+            }
+
+            try {
+                const result = Function('"use strict"; return (' + expression + ')')();
+                if (!Number.isFinite(result)) return showError(); // e.g. 5/0
+                // Avoids 0.1 + 0.2 = 0.30000000000000004
+                input.value = String(parseFloat(result.toPrecision(12)));
+                input.classList.remove('error');
+            } catch (err) {
+                showError();
+            }
+        }
+
+        function showError() {
+            input.classList.add('error');
+        }
+    </script>
+</body>
+</html> -->
