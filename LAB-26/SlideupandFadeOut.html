@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+</head>
+<body>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>thrid</li>
+        <li>fourth</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $('li').click(function() {
+                $(this).css("background-color","yellow").slideUp(1000);
+                $(this).css("background-color","yellow").fadeOut(1000);
+                $(this).css("background-color","yellow").slideDown(1000);
+                
+                console.log("Clicked")
+            })
+        })
+    </script>
+</body>
+</html>

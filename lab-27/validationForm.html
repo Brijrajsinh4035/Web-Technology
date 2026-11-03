@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <label>Name:</label>
+      <input type="text" id="name" />
+      <span class="error" id="nameError"></span>
+      <br /><br />
+
+      <label>Email:</label>
+      <input type="text" id="email" />
+      <span class="error" id="emailError"></span>
+      <br /><br />
+
+      <label>Password:</label>
+      <input type="password" id="password" />
+      <span class="error" id="passwordError"></span>
+      <br /><br />
+
+      <label>Mobile:</label>
+      <input type="text" id="mobile" />
+      <span class="error" id="mobileError"></span>
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      $(document).ready(function () {
+        $("#myForm").submit(function (event) {
+          let isValid = true;
+          $(".error").text("");
+
+          let name = $("#name").val().trim();
+          if (name === "") {
+            $("#nameError").text("name is required");
+            isValid = false;
+          }
+
+          let email = $("#email").val().trim();
+
+          let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._]+\.[A-Za-z]{2,}$/;
+          if (email === "") {
+            $("#emailError").text("Email is required");
+            isValid = false;
+          } else if (!emailPattern.test(email)) {
+            $("#emailError").text("Enter a valid email");
+            isValid = false;
+          }
+
+          let password = $("#password").val();
+          let passwordPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*]).{8,}$/;
+          if (password === "") {
+            $("#passwordError").text("Password is required");
+            isValid = false;
+          } else if (!passwordPattern.test(password)) {
+            $("#passwordError").text(
+              "Password must contain uppercase, lowercase, digit, special character and minimum 8 characters",
+            );
+            isValid = false;
+          }
+
+          let mobile = $("#mobile").val().trim();
+          let mobilePattern = /^[\d]{10}$/;
+
+          if (mobile === "") {
+            $("#mobileError").text("Mobile number is required");
+            isValid = false;
+          } else if (!mobilePattern.test(mobile)) {
+            $("#mobileError").text("Enter a valid 10-digit mobile number");
+            isValid = false;
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

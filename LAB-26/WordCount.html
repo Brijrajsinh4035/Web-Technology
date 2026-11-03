@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <textarea id="t1">
+
+    </textarea>
+
+    <p>The Count is
+    <p id="count"></p>
+    </p>
+
+    <p id="p1"></p>
+
+    <script>
+        $.fn.workcount = function () {
+
+            var text = $(this).val().trim();
+            if (text === "") {
+                return 0;
+            }
+            var word = text.split(/\s+/);
+            return word.length;
+        };
+
+        $(document).ready(function () {
+            $('#t1').on('input',function () {
+                $('#p1').text($(this).val().trim());
+                var count = $(this).workcount();
+                $('#count').text(count);
+            });
+        })
+    </script>
+</body>
+
+</html>
